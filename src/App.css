@@ -1,0 +1,94 @@
+.shadow-intro {
+    box-shadow: 0 50px 100px rgba(0, 0, 0);
+}
+
+.input {
+    color: white;
+    border-color: rgb(23, 90, 153) !important;
+}
+
+.inputLogin {
+    border-width: 3px !important;
+    color: rgb(23, 90, 153)!important;
+    border-color: rgb(23, 90, 153) !important;
+}
+
+
+.inputLogin:active {
+    color: white !important;
+    border-color: rgb(23, 90, 153) !important;
+}
+
+.btn-login {
+    border-width: 3px !important;
+    border-color: rgb(23, 90, 153) !important;
+    font-size: 18px;
+    color: rgb(23, 90, 153)!important;
+}
+
+.btn-login:hover {
+    color: white !important;
+    background-color: rgb(23, 90, 153)!important;
+    border-color: transparent !important;
+}
+
+.text-decoration-none:hover {
+    text-decoration: underline !important;
+}
+
+.main-bg {
+    background-color: rgba(27, 54, 105, 0) !important;
+    background-size: cover;
+    background-position: center;
+}
+.main-color {
+    color: rgb(23, 90, 153)!important;
+}
+.main-color-border {
+    border-color: rgb(23, 90, 153) !important;
+    border-width: 3px !important;
+}
+
+
+.filter {
+    background-color: rgba(27, 54, 105, 1) !important;
+    width: 100%;
+    height: 100%;
+}
+
+.alert-log {
+    background-color: rgba(209, 11, 11, 0.6) !important;
+    width: 75% !important;
+}
+
+.form-size {
+    width: 80%;
+    background-color: rgba(255, 255, 255) !important;
+}
+
+.form-signup {
+    background-color: rgba(255, 255, 255, 1) !important;
+}
+
+.text-logo {
+    color: rgb(23, 90, 153);
+    font-weight: 400;
+}
+/* nav */
+.nav-bg {
+    background-color: rgba(27, 54, 105, 0.6) !important;
+}
+/* Home */
+.bg-Home{
+    background-color: rgb(237, 231, 220);
+}
+.inputNo::placeholder {
+    color: #ab34c5;
+  }
+  /* food */
+  
+.result {
+    border-color: rgb(23, 90, 153) !important;
+    border-width: 100px !important;
+    background-color: rgb(14, 26, 49) !important;
+}
