@@ -31,7 +31,7 @@ export default function Login({ saveUser }) //props.saveUser
         if (valid.error == null) {
 
             setLouding(true)
-            let { data } = await axios.post('https://test1-jp49rrpn9-minagorge1.vercel.app/auth/sign_in', user)
+            let { data } = await axios.post('https://test1-fcw5gw46d-minagorge1.vercel.app/auth/sign_in', user)
             setLouding(false)
             if (data.message === 'Done') {
                 // login
