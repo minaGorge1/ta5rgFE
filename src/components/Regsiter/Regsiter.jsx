@@ -33,7 +33,7 @@ export default function Regsiter() {
         if (valid.error == null) {
 
             setLouding(true)
-            let { data } = await axios.post('https://test1-3p7j99e3s-minagorge1.vercel.app/auth/sign_up', user)
+            let { data } = await axios.post('https://test1-jp49rrpn9-minagorge1.vercel.app/auth/sign_up', user)
 
             setLouding(false)
             if (data.message === 'Done') {
