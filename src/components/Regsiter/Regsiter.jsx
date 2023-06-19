@@ -33,7 +33,7 @@ export default function Regsiter() {
         if (valid.error == null) {
 
             setLouding(true)
-            let { data } = await axios.post('https://test1-jp49rrpn9-minagorge1.vercel.app/auth/sign_up', user)
+            let { data } = await axios.post('https://test1-fcw5gw46d-minagorge1.vercel.app/auth/sign_up', user)
 
             setLouding(false)
             if (data.message === 'Done') {
@@ -54,8 +54,8 @@ export default function Regsiter() {
             userName: Joi.string().required().min(3).max(30).alphanum(),
             age: Joi.number().required().min(16).max(80),
             email: Joi.string().required().email({ tlds: { allow: ['com', 'net'] } }),//top level domin
-            password: Joi.string().required().pattern(new RegExp(/[0-9]/)),
-            cPassword: Joi.string().required().pattern(new RegExp(/[0-9]/)),
+            password: Joi.string().required(),
+            cPassword: Joi.string().required(),
         })
 
         return scheme.validate(user, { abortEarly: false }) // dy al btkarin w btl3lk 2h aly na2s
