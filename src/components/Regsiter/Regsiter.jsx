@@ -9,7 +9,7 @@ export default function Regsiter() {
 
     let [user, sitUser] = useState({
         userName: "",
-        age: "",
+        phone: "",
         email: "",
         password: "",
         cPassword: "",
@@ -33,7 +33,7 @@ export default function Regsiter() {
         if (valid.error == null) {
 
             setLouding(true)
-            let { data } = await axios.post('https://test1-fcw5gw46d-minagorge1.vercel.app/auth/sign_up', user)
+            let { data } = await axios.post('https://test1-2x7cjptq0-minagorge1.vercel.app/auth/sign_up', user)
 
             setLouding(false)
             if (data.message === 'Done') {
@@ -51,11 +51,11 @@ export default function Regsiter() {
     function ValidData() {
 
         let scheme = Joi.object({
-            userName: Joi.string().required().min(3).max(30).alphanum(),
-            age: Joi.number().required().min(16).max(80),
-            email: Joi.string().required().email({ tlds: { allow: ['com', 'net'] } }),//top level domin
+            userName: Joi.string().max(20).required().alphanum(),
+            phone: Joi.string().required(),
+            email: Joi.string().email({ minDomainSegments: 2, maxDomainSegments: 4, tlds: { allow: ["com", "net"] } }).required(),
             password: Joi.string().required(),
-            cPassword: Joi.string().required(),
+            cPassword: Joi.string().required().valid(Joi.ref('password'))
         })
 
         return scheme.validate(user, { abortEarly: false }) // dy al btkarin w btl3lk 2h aly na2s
@@ -84,7 +84,7 @@ export default function Regsiter() {
                                     </path>
                                 </svg>
 
-                        </div>
+                            </div>
 
                         </div>
 
@@ -101,8 +101,8 @@ export default function Regsiter() {
                                     </div>
 
                                     <div className='mt-3'>
-                                        <label className='main-color' htmlFor="age">Age</label>
-                                        <input type="number" onChange={addUser} className='inputLogin form-control mt-2 bg-transparent text-white' id='age' name='age' />
+                                        <label className='main-color' htmlFor="phone">phone</label>
+                                        <input type="text" onChange={addUser} className='inputLogin form-control mt-2 bg-transparent text-white' id='phone' name='phone' />
                                     </div>
 
                                     <div className='mt-3'>
@@ -120,9 +120,11 @@ export default function Regsiter() {
                                             <input type="password" onChange={addUser} className='inputLogin form-control mt-2 bg-transparent text-white' id='cPassword' name='cPassword' />
                                         </div>
                                     </div>
-                                    <div className='m-3'>{errorLest.length > 0 ? errorLest.map((el, i) => <div key={i} className=' m-1 w-75 alert-log'>{el.message}</div>) : ""}
-                                    {errorApi === "" ? "" : <div className=' m-1 w-75 alert-log'>{errorApi}</div>}</div>
-                                    
+                                    <div className='m-3 text-center d-flex justify-content-center'>
+                                        {errorLest.length > 0 ? errorLest.map((el, i) => <div key={i} className=' m-1 w-75 alert-log'>{el.message}</div>) : ""}
+                                        {errorApi === "" ? "" : <div className=' m-1 w-75 text-center alert-log'>{errorApi}</div>}
+                                    </div>
+
                                     <div className='mt-3 d-flex justify-content-end'>
                                         {louding ?
                                             <button className='text-blue bg-transparent  px-2 py-1 w-100 border-1 rounded-2 btn-login mt-3'><i className='fa-solid fa-spinner fa-spin mt-3'></i></button>

@@ -31,7 +31,7 @@ export default function Login({ saveUser }) //props.saveUser
         if (valid.error == null) {
 
             setLouding(true)
-            let { data } = await axios.post('https://test1-fcw5gw46d-minagorge1.vercel.app/auth/sign_in', user)
+            let { data } = await axios.post('https://test1-2x7cjptq0-minagorge1.vercel.app/auth/sign_in', user)
             setLouding(false)
             if (data.message === 'Done') {
                 // login
@@ -105,11 +105,12 @@ export default function Login({ saveUser }) //props.saveUser
                                             id='password' name='password'
                                         />
 
-                                        <div id="alrtPw" class="opacity-0 text-danger">Error</div>
+                                        <div id="alrtPw" class="opacity-0 text-center d-flex justify-content-center text-danger">Error</div>
 
-                                        {errorLest.length > 0 ? errorLest.map((el, i) => <div className=' d-flex justify-content-center'><div key={i} className=' alert-log p-2 m-2 w-75 d-flex justify-content-center '>{el.message}</div></div>) : ""}
-
-                                        {errorApi === "" ? "" : <div className='alert-log p-2 m-2 w-75 d-flex justify-content-center '>{errorApi}</div>}
+                                        {errorLest.length > 0 ? errorLest.map((el, i) => <div className=' d-flex justify-content-center'><div key={i} className=' alert-log p-2 m-2'>{el.message}</div></div>) : ""}
+                                        <div className='d-flex justify-content-center'>
+                                            {errorApi === "" ? "" : <div className='alert-log p-2 m-2 w-75 d-flex justify-content-center '>{errorApi}</div>}
+                                        </div>
 
 
                                         {louding ?
