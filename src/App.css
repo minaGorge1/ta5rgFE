@@ -88,7 +88,8 @@
   /* food */
   
 .result {
+    font-size: 30px;
     border-color: rgb(23, 90, 153) !important;
     border-width: 100px !important;
-    background-color: rgb(14, 26, 49) !important;
+    background-color: rgb(255, 255, 255) !important;
 }
