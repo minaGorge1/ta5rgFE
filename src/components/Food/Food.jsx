@@ -50,8 +50,8 @@ const Food = () => {
                                         <div className='pb-1 text-center col-9 py-5'>
                                             <label>{el.name} </label>
                                             <label className='text-dark'>&nbsp; This food is &nbsp;</label>
-                                            {el.status === "helthy" ? <label className='text-success'>{el.status}</label> :
-                                                <label className='text-danger'>{el.status}</label>}</div> </div>)}
+                                            {el.status === "helthy" ? <label className='text-success'>healthy</label> :
+                                                <label className='text-danger'>unhealthy</label>}</div> </div>)}
                                     </div>
                                     : <p><i className='fa-solid text-danger fs-1 m-5 p-5 fa-spinner fa-spin'></i></p>}
                             </div>

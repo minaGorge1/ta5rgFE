@@ -118,7 +118,7 @@ export default function Home({ saveUser }) {
                     <div className='select-style col-12 row justify-content-center '>
                       <select class=" form-select m-2 dropdown w-50 main-color main-color-border p-2 fs-3 rounded-3 "
                         onClick={(e) => handleChange("d1", e.target.value, e)} selectedOption={selectedOption.d1} name="cars" id="list1">
-                        <option className='d-none' value="">select your sympthms</option>
+                        <option className='d-none' value="">select your symptoms</option>
                         {symptms.map((el, i) => <option key={el.value} value={el.value} className=' m-auto w-75 dropdown-item'>{el.name}</option>)}
                       </select>
                     </div>
@@ -126,7 +126,7 @@ export default function Home({ saveUser }) {
                     <div className='col-12 row justify-content-center'>
                       <select class=" m-2 dropdown w-50 main-color main-color-border p-2 fs-3 rounded-3 "
                         onClick={(e) => handleChange("d2", e.target.value)} selectedOption={selectedOption.d2} name="cars" id="list2">
-                        <option className='d-none' value="">select your sympthms</option>
+                        <option className='d-none' value="">select your symptoms</option>
                         {symptms.map((el, i) => <option key={el.value} value={el.value} className=' m-auto w-75 dropdown-item'>{el.name}</option>)}
                       </select>
                     </div>
@@ -134,7 +134,7 @@ export default function Home({ saveUser }) {
                     <div className='col-12 row justify-content-center'>
                       <select class="m-2 dropdown w-50 main-color main-color-border p-2 fs-3 rounded-3 "
                         onClick={(e) => handleChange("d3", e.target.value)} selectedOption={selectedOption.d3} name="cars" id="list3">
-                        <option className='d-none' value="">select your sympthms</option>
+                        <option className='d-none' value="">select your symptoms</option>
                         {symptms.map((el, i) => <option key={el.value} value={el.value} className=' m-auto w-75 dropdown-item'>{el.name}</option>)}
                       </select>
                     </div>
@@ -142,7 +142,7 @@ export default function Home({ saveUser }) {
                     <div className='col-12 row justify-content-center'>
                       <select class="m-2 dropdown w-50 main-color main-color-border p-2 fs-3 rounded-3 "
                         onClick={(e) => handleChange("d4", e.target.value)} selectedOption={selectedOption.d4} name="cars" id="list4">
-                        <option className='d-none' value="">select your sympthms</option>
+                        <option className='d-none' value="">select your symptoms</option>
                         {symptms.map((el, i) => <option key={el.value} value={el.value} className=' m-auto w-75 dropdown-item'>{el.name}</option>)}
                       </select>
                     </div>
@@ -150,7 +150,7 @@ export default function Home({ saveUser }) {
                     <div className='col-12 row justify-content-center'>
                       <select class="m-2 dropdown w-50 main-color main-color-border p-2 fs-3 rounded-3 "
                         onClick={(e) => handleChange("d5", e.target.value)} selectedOption={selectedOption.d5} name="cars" id="list5">
-                        <option className='d-none' value="">select your sympthms</option>
+                        <option className='d-none' value="">select your symptoms</option>
                         {symptms.map((el, i) => <option key={el.value} value={el.value} className=' m-auto w-75 dropdown-item'>{el.name}</option>)}
                       </select>
                     </div>
@@ -162,11 +162,21 @@ export default function Home({ saveUser }) {
                 <br />
                 <div className='d-flex justify-content-center'>
                   <br />
-                  {!louding ? <Link to={'/Food/' + resultF.result}><a href className='text-primary bg-transparent text-center fs-3 w-25 px-2 py-1 border-0 rounded-5 my-3'><b>{resultF.result}</b></a> </Link> : <p><b>louding.....</b></p>}
+                  {!louding ?
+                    <div>
+                      {resultF.result ? <div>
+
+                        <p className='text-primary bg-transparent w-100 text-center fs-3 w-25 px-2 py-1 border-0 rounded-5 '><b><label className=' text-black'>You may have this disease :</label> {resultF.result}</b></p>
+                        <Link to={'/Food/' + resultF.result} >
+                          <a href className='text-primary bg-transparent text-center fs-3 w-25 px-2 py-1 border-0 rounded-5 my-3'><b>If you want to know more about this disease click here</b></a>
+                        </Link> </div> : ""}</div>
+                    : <p><b>louding.....</b></p>}
                 </div>
 
                 <div className='d-flex justify-content-center'>
-                  {ok ? <button type='submit' className='text-blue bg-transparent w-25 px-2 py-1  border-1 rounded-5 btn-login my-5'>Submit</button> : <p><b>select all sympthms</b></p>}
+                  {ok ?
+                    <button type='submit' className='text-blue bg-transparent w-25 px-2 py-1  border-1 rounded-5 btn-login my-5'>Submit</button>
+                    : <p><b>select all symptoms</b></p>}
                 </div>
 
               </form>
@@ -176,7 +186,7 @@ export default function Home({ saveUser }) {
           </section>
           </div>
         </div>
-      </div>
+      </div >
 
 
 

@@ -33,15 +33,17 @@ export default function Regsiter() {
         if (valid.error == null) {
 
             setLouding(true)
-            let { data } = await axios.post('https://test1-2x7cjptq0-minagorge1.vercel.app/auth/sign_up', user)
-
-            setLouding(false)
+            let { data } = await axios.post('https://test1-2x7cjptq0-minagorge1.vercel.app/auth/sign_up', user).catch(function (error) {
+                setLouding(false)
+                if (error.response) {
+                    console.log(error.response.data.message);
+                    setErrorApi(error.response.data.message)
+                }
+            });
+            
             if (data.message === 'Done') {
                 // login
                 navgiate('/login')
-            } else {
-                // error
-                setErrorApi(data.message)
             }
         } else {
             setErrorLest(valid.error.details)
