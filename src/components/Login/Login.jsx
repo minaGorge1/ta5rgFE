@@ -28,10 +28,16 @@ export default function Login({ saveUser }) //props.saveUser
         e.preventDefault() // al slook al bda2y ll submit
         let valid = ValidData() // vaild
 
-        if (valid.error == null) {
+        if (valid.error == null) {``
 
             setLouding(true)
-            let { data } = await axios.post('https://test1-2x7cjptq0-minagorge1.vercel.app/auth/sign_in', user)
+            let { data } = await axios.post('https://test1-2x7cjptq0-minagorge1.vercel.app/auth/sign_in', user).catch(function (error) {
+                setLouding(false)
+                if (error.response) {
+                    console.log(error.response.data.message);
+                    setErrorApi(error.response.data.message)
+                }
+            });
             setLouding(false)
             if (data.message === 'Done') {
                 // login
